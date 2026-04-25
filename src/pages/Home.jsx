@@ -21,15 +21,15 @@ export default function Home() {
 
       <section className="block">
         <div className="wrap">
-          <p className="muted">
-            Better late than never.<br />Join us for the night!
-          </p>
           <img
             src="/couple-figures.png"
             alt="Sean and Wei Qi"
             className="intro-img"
             loading="lazy"
           />
+          <p className="muted">
+            Better late than never.<br />Join us for the night!
+          </p>
         </div>
       </section>
     </>
