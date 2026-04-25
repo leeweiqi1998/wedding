@@ -1,4 +1,4 @@
-# Sean & Wei Qi — Wedding Site
+# Sean & Wei Qi · Wedding Site
 
 Vite + React + React Router. Multi-page wedding site (Home, Details, RSVP, FAQ).
 
@@ -43,7 +43,7 @@ The form posts JSON to `VITE_RSVP_ENDPOINT`. Sheet is **"Wedding RSVPs"**, alrea
 shared with the service account `sheets@sheets-367309.iam.gserviceaccount.com` as
 Editor.
 
-Suggested setup — a small backend that receives the POST, authenticates with the
+Suggested setup: a small backend that receives the POST, authenticates with the
 service account, and appends a row using the Google Sheets API. Easiest hosts:
 
 - **Cloudflare Worker** (free, fast). Use `googleapis` via a JWT, or sign a JWT

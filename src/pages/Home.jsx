@@ -22,7 +22,7 @@ export default function Home() {
       <section className="block">
         <div className="wrap">
           <p className="muted">
-            Better late than never &mdash;<br />join us for the night!
+            Better late than never.<br />Join us for the night!
           </p>
         </div>
       </section>

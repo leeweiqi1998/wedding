@@ -155,7 +155,7 @@ export default function Rsvp() {
               <textarea
                 id="note" name="note" rows="3" required
                 value={form.note} onChange={onChange}
-                placeholder="Be silly, be sweet, be specific — just don't leave us hanging."
+                placeholder="Be silly, be sweet, be specific. Just don't leave us hanging."
               />
             </div>
 
