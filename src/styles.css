@@ -1,7 +1,7 @@
 :root{
   --bg:#fafaf7;
-  --ink:#064e3b;          /* emerald-900 */
-  --muted:#064e3b;        /* same emerald — all text one color */
+  --ink:#064e3b;                     /* emerald-900 */
+  --muted:rgba(6,78,59,0.6);         /* same hue, softer */
   --rule:#e5e1d8;
   --rule-strong:#c8c2b4;
 }
@@ -72,7 +72,7 @@ a:hover{opacity:.6}
 /* HERO */
 .hero{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:80px 28px 40px;
+  text-align:center;padding:80px 28px 16px;
 }
 .eyebrow{
   font-size:11px;letter-spacing:.32em;text-transform:uppercase;
@@ -141,7 +141,7 @@ a:hover{opacity:.6}
 /* SECTION BASE */
 section.block{padding:32px 28px 90px}
 section.block + section.block{border-top:1px solid var(--rule);padding-top:90px}
-.hero + section.block{padding-top:24px}
+.hero + section.block{padding-top:8px}
 section.block .wrap{text-align:center}
 h2{
   font-family:"Fraunces", Georgia, serif;font-weight:300;
@@ -286,8 +286,8 @@ footer .mark{
 @media (max-width:600px){
   section.block{padding:24px 24px 72px}
   section.block + section.block{padding-top:72px}
-  .hero + section.block{padding-top:16px}
-  .hero{padding:56px 20px 32px}
+  .hero + section.block{padding-top:4px}
+  .hero{padding:56px 20px 12px}
   .hero .meta{margin-top:36px}
   .countdown{margin-top:36px}
   .hero-cta{margin-top:36px;padding:14px 28px}
