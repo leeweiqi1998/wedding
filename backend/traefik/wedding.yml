@@ -1,0 +1,23 @@
+http:
+  routers:
+    wedding-rsvp:
+      rule: "Host(`api.larper-research.xyz`) && PathPrefix(`/wedding`)"
+      entryPoints:
+        - websecure
+      service: wedding-rsvp
+      tls:
+        certResolver: letsencrypt
+      middlewares:
+        - wedding-strip
+
+  services:
+    wedding-rsvp:
+      loadBalancer:
+        servers:
+          - url: "http://127.0.0.1:8071"
+
+  middlewares:
+    wedding-strip:
+      stripPrefix:
+        prefixes:
+          - "/wedding"

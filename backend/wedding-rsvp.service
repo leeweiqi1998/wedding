@@ -1,0 +1,14 @@
+[Unit]
+Description=Wedding RSVP API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/wedding-rsvp
+EnvironmentFile=/root/wedding-rsvp/.env
+ExecStart=/root/wedding-rsvp/.venv/bin/uvicorn api:app --host 127.0.0.1 --port 8071
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
