@@ -24,6 +24,12 @@ export default function Home() {
           <p className="muted">
             Better late than never.<br />Join us for the night!
           </p>
+          <img
+            src="/couple-figures.png"
+            alt="Sean and Wei Qi"
+            className="intro-img"
+            loading="lazy"
+          />
         </div>
       </section>
     </>

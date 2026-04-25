@@ -1,10 +1,11 @@
 :root{
   --bg:#fafaf7;
-  --ink:#1a1a1a;
+  --ink:#064e3b;          /* emerald-900 */
   --muted:#7a756e;
   --rule:#e5e1d8;
   --rule-strong:#c8c2b4;
 }
+html{background:var(--bg)}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 html{
@@ -147,8 +148,16 @@ h2{
   font-family:"Fraunces", Georgia, serif;font-weight:300;
   font-size:30px;letter-spacing:-.01em;margin:0 0 24px;
 }
-p{margin:0 0 18px;color:#3a3a3a}
+p{margin:0 0 18px;color:var(--ink)}
 p.muted{color:var(--muted)}
+
+.intro-img{
+  display:block;
+  margin:32px auto 0;
+  max-width:min(420px, 82vw);
+  width:100%;
+  height:auto;
+}
 
 /* DETAILS LIST */
 .details dl{
@@ -225,7 +234,7 @@ form.rsvp-form{margin:0 auto;max-width:520px;text-align:left}
   flex:1;min-width:140px;
   border:1px solid var(--rule-strong);
   padding:14px 16px;text-align:center;cursor:pointer;
-  font-size:15px;color:#3a3a3a;transition:all .15s;user-select:none;
+  font-size:15px;color:var(--ink);transition:all .15s;user-select:none;
 }
 .radios input{position:absolute;opacity:0;pointer-events:none}
 .radios label:hover{border-color:var(--ink);color:var(--ink)}
@@ -255,7 +264,7 @@ button.submit:disabled{opacity:.4;cursor:wait}
 .notes ul{list-style:none;padding:0;margin:24px 0 0;text-align:left}
 .notes li{
   padding:18px 0;border-top:1px solid var(--rule);
-  font-size:15px;color:#3a3a3a;
+  font-size:15px;color:var(--ink);
 }
 .notes li:last-child{border-bottom:1px solid var(--rule)}
 .notes li strong{

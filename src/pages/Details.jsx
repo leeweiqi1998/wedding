@@ -3,8 +3,8 @@ import { downloadIcs } from '../lib/calendar.js';
 const GCAL_URL =
   'https://www.google.com/calendar/render?action=TEMPLATE' +
   '&text=Sean+%26+Wei+Qi%27s+Wedding+Dinner' +
-  '&dates=20261107T100000Z/20261107T160000Z' +
-  '&details=Black+tie.+Reception+from+6pm%2C+dinner+at+7pm.' +
+  '&dates=20261107T103000Z/20261107T160000Z' +
+  '&details=Suits+and+floor-length+gowns.+Reception+from+6%3A30pm%2C+dinner+at+7pm.' +
   '&location=Clifford+Pier%2C+The+Fullerton+Bay+Hotel%2C+80+Collyer+Quay%2C+Singapore+049326';
 
 export default function Details() {
@@ -22,7 +22,7 @@ export default function Details() {
             <dd>Saturday, 7 November 2026</dd>
 
             <dt>Time</dt>
-            <dd>6:00 pm reception<small>Dinner at 7:00 pm</small></dd>
+            <dd>6:30 pm reception<small>Dinner at 7:00 pm</small></dd>
 
             <dt>Venue</dt>
             <dd>
@@ -34,7 +34,7 @@ export default function Details() {
             </dd>
 
             <dt>Dress code</dt>
-            <dd>Black tie</dd>
+            <dd>Suits and floor-length gowns</dd>
 
             <dt>Plus one</dt>
             <dd>Warmly welcome</dd>

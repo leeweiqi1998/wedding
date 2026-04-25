@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-// Backend lives on the buff2 server (FastAPI + Sheets API).
 // Override with VITE_RSVP_ENDPOINT for local dev / staging.
 const RSVP_ENDPOINT =
   import.meta.env.VITE_RSVP_ENDPOINT ||

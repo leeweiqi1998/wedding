@@ -37,37 +37,10 @@ src/
     calendar.js         # .ics download
 ```
 
-## RSVP backend
+## RSVP form
 
-The form POSTs JSON to `https://api.larper-research.xyz/wedding/rsvp`, which
-appends a row to the **"Wedding RSVPs"** Google Sheet.
-
-The backend is a small FastAPI service running on the `buff2` VPS:
-
-- Code: `/root/wedding-rsvp/api.py`
-- Service: `systemctl {status,restart} wedding-rsvp.service`
-- Listens on `127.0.0.1:8071`
-- Routed by Traefik via `/docker/traefik/dynamic/wedding.yml`
-- Auth: service account `sheets@sheets-367309.iam.gserviceaccount.com`
-  (key at `/root/wedding-rsvp/service_account_sheets.json`)
-- Sheet ID is set in `/root/wedding-rsvp/.env` as `SHEET_ID`
-
-To override during local dev, set `VITE_RSVP_ENDPOINT` in `.env.local`.
-
-Payload shape:
-
-```json
-{
-  "name": "...",
-  "email": "...",
-  "attending": "Joyfully accepts" | "Regretfully declines",
-  "plus_one": "Bringing a guest" | "Coming solo",
-  "plus_one_name": "...",
-  "dietary": "...",
-  "note": "...",
-  "submitted_at": "2026-04-25T12:00:00.000Z"
-}
-```
+The RSVP form POSTs JSON to a private endpoint that records submissions.
+Override the URL during local dev with `VITE_RSVP_ENDPOINT` in `.env.local`.
 
 ## Deploy
 

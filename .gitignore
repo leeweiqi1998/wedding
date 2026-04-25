@@ -8,9 +8,3 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
-
-# Backend secrets
-backend/.env
-backend/service_account_sheets.json
-backend/.venv/
-backend/__pycache__/
