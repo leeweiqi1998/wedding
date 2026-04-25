@@ -1,44 +1,79 @@
 # Sean & Wei Qi — Wedding Site
 
-Static multi-page wedding site. No build step.
+Vite + React + React Router. Multi-page wedding site (Home, Details, RSVP, FAQ).
 
-## Structure
-
-```
-index.html       # Hero + intro + CTA
-details.html     # Date, time, venue, dress code, map, calendar
-rsvp.html        # RSVP form
-faq.html         # Good to know
-favicon.svg
-assets/
-  css/styles.css
-  js/nav.js      # active-link highlighting
-  js/calendar.js # .ics download for Apple / Outlook
-  js/rsvp.js     # RSVP form submit
-```
-
-## Local preview
+## Develop
 
 ```bash
-python -m http.server 8000
+npm install
+npm run dev          # http://localhost:5173
+npm run build        # outputs to dist/
+npm run preview      # serve the built dist/
 ```
 
-Then open http://localhost:8000.
+## Project layout
 
-## Wiring up RSVP → Google Sheets
-
-The form in `rsvp.html` POSTs to a URL set in `assets/js/rsvp.js`:
-
-```js
-const RSVP_ENDPOINT = ''; // set to Apps Script /exec URL
+```
+index.html              # Vite entry
+vite.config.js
+public/
+  favicon.svg
+src/
+  main.jsx              # bootstrap + BrowserRouter
+  App.jsx               # routes
+  styles.css
+  components/
+    Layout.jsx
+    Nav.jsx
+    Footer.jsx
+    Countdown.jsx       # live countdown to 7 Nov 2026
+  pages/
+    Home.jsx            # hero + countdown + RSVP CTA
+    Details.jsx         # date, time, venue, calendar, map
+    Rsvp.jsx            # form
+    Faq.jsx             # good-to-know
+    NotFound.jsx
+  lib/
+    calendar.js         # .ics download
 ```
 
-Two options:
+## Wiring up RSVP → Google Sheet
 
-1. **Google Apps Script (simplest)** — bound to the sheet, deploy as a web app. No service account needed.
-2. **Backend with service account** — small server (Cloudflare Worker, Cloud Run, etc.) using the existing `service_account_sheets.json` and the Sheets API. Share the target sheet with the service-account email as Editor:
-   - `sheets@sheets-367309.iam.gserviceaccount.com`
+The form posts JSON to `VITE_RSVP_ENDPOINT`. Sheet is **"Wedding RSVPs"**, already
+shared with the service account `sheets@sheets-367309.iam.gserviceaccount.com` as
+Editor.
 
-## Deploying
+Suggested setup — a small backend that receives the POST, authenticates with the
+service account, and appends a row using the Google Sheets API. Easiest hosts:
 
-Anything that serves static files works (GitHub Pages, Netlify, Cloudflare Pages, Vercel). Push to `main` and point your host at the repo root.
+- **Cloudflare Worker** (free, fast). Use `googleapis` via a JWT, or sign a JWT
+  manually and call `sheets.googleapis.com/v4/spreadsheets/{id}/values/Sheet1:append`.
+- **Cloud Run** / **Cloud Functions** with the `googleapis` Node package.
+- **Vercel / Netlify Function** with the `googleapis` Node package.
+
+Then set the deployed URL in `.env.local`:
+
+```
+VITE_RSVP_ENDPOINT=https://your-endpoint.example.com/rsvp
+```
+
+Payload shape:
+
+```json
+{
+  "name": "...",
+  "email": "...",
+  "attending": "Joyfully accepts" | "Regretfully declines",
+  "plus_one": "Bringing a guest" | "Coming solo",
+  "plus_one_name": "...",
+  "dietary": "...",
+  "note": "...",
+  "submitted_at": "2026-04-25T12:00:00.000Z"
+}
+```
+
+## Deploy
+
+`dist/` is plain static output. Drop it on Netlify, Cloudflare Pages, Vercel, or
+GitHub Pages. For GitHub Pages under a repo subpath, set `base` in `vite.config.js`
+to `'/wedding/'`.

@@ -1,5 +1,4 @@
-// Generate and download an .ics file (Apple Calendar, Outlook, etc.)
-document.getElementById('cal-ics')?.addEventListener('click', () => {
+export function downloadIcs() {
   const ics = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
@@ -26,4 +25,4 @@ document.getElementById('cal-ics')?.addEventListener('click', () => {
   a.click();
   document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-});
+}
