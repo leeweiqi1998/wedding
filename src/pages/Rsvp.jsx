@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-// Wire this to your backend that writes to the "Wedding RSVPs" Google Sheet
-// using the service account. See README for the suggested Cloudflare Worker
-// / Cloud Run setup.
-const RSVP_ENDPOINT = import.meta.env.VITE_RSVP_ENDPOINT || '';
+// Backend lives on the buff2 server (FastAPI + Sheets API).
+// Override with VITE_RSVP_ENDPOINT for local dev / staging.
+const RSVP_ENDPOINT =
+  import.meta.env.VITE_RSVP_ENDPOINT ||
+  'https://api.larper-research.xyz/wedding/rsvp';
 
 const initial = {
   name: '',

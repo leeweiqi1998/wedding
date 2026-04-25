@@ -37,25 +37,22 @@ src/
     calendar.js         # .ics download
 ```
 
-## Wiring up RSVP → Google Sheet
+## RSVP backend
 
-The form posts JSON to `VITE_RSVP_ENDPOINT`. Sheet is **"Wedding RSVPs"**, already
-shared with the service account `sheets@sheets-367309.iam.gserviceaccount.com` as
-Editor.
+The form POSTs JSON to `https://api.larper-research.xyz/wedding/rsvp`, which
+appends a row to the **"Wedding RSVPs"** Google Sheet.
 
-Suggested setup: a small backend that receives the POST, authenticates with the
-service account, and appends a row using the Google Sheets API. Easiest hosts:
+The backend is a small FastAPI service running on the `buff2` VPS:
 
-- **Cloudflare Worker** (free, fast). Use `googleapis` via a JWT, or sign a JWT
-  manually and call `sheets.googleapis.com/v4/spreadsheets/{id}/values/Sheet1:append`.
-- **Cloud Run** / **Cloud Functions** with the `googleapis` Node package.
-- **Vercel / Netlify Function** with the `googleapis` Node package.
+- Code: `/root/wedding-rsvp/api.py`
+- Service: `systemctl {status,restart} wedding-rsvp.service`
+- Listens on `127.0.0.1:8071`
+- Routed by Traefik via `/docker/traefik/dynamic/wedding.yml`
+- Auth: service account `sheets@sheets-367309.iam.gserviceaccount.com`
+  (key at `/root/wedding-rsvp/service_account_sheets.json`)
+- Sheet ID is set in `/root/wedding-rsvp/.env` as `SHEET_ID`
 
-Then set the deployed URL in `.env.local`:
-
-```
-VITE_RSVP_ENDPOINT=https://your-endpoint.example.com/rsvp
-```
+To override during local dev, set `VITE_RSVP_ENDPOINT` in `.env.local`.
 
 Payload shape:
 
