@@ -11,7 +11,7 @@ export function downloadIcs() {
     'DTSTART:20261107T103000Z',
     'DTEND:20261107T160000Z',
     "SUMMARY:Sean & Wei Qi's Wedding Dinner",
-    'DESCRIPTION:Suits and floor-length gowns. Reception from 6:30pm\\, dinner at 7pm.',
+    'DESCRIPTION:Formal. Reception from 6:30pm\\, dinner at 7pm.',
     'LOCATION:Clifford Pier\\, The Fullerton Bay Hotel\\, 80 Collyer Quay\\, Singapore 049326',
     'END:VEVENT',
     'END:VCALENDAR',

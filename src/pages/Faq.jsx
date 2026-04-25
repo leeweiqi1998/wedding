@@ -1,5 +1,5 @@
 const items = [
-  { title: 'Dress code', body: 'Suits and floor-length gowns.' },
+  { title: 'Dress code', body: 'Formal.' },
   { title: 'Plus ones', body: "You're warmly welcome to bring a guest if you'd like. Just pop their name in your RSVP." },
   { title: 'Adults only', body: 'With love, this is an adults-only evening.' },
   { title: 'Dietary notes', body: 'Allergies or dietary needs? Let us know in the RSVP form.' },

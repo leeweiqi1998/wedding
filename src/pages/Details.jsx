@@ -4,7 +4,7 @@ const GCAL_URL =
   'https://www.google.com/calendar/render?action=TEMPLATE' +
   '&text=Sean+%26+Wei+Qi%27s+Wedding+Dinner' +
   '&dates=20261107T103000Z/20261107T160000Z' +
-  '&details=Suits+and+floor-length+gowns.+Reception+from+6%3A30pm%2C+dinner+at+7pm.' +
+  '&details=Formal.+Reception+from+6%3A30pm%2C+dinner+at+7pm.' +
   '&location=Clifford+Pier%2C+The+Fullerton+Bay+Hotel%2C+80+Collyer+Quay%2C+Singapore+049326';
 
 export default function Details() {
@@ -34,7 +34,7 @@ export default function Details() {
             </dd>
 
             <dt>Dress code</dt>
-            <dd>Suits and floor-length gowns</dd>
+            <dd>Formal</dd>
 
             <dt>Plus one</dt>
             <dd>Warmly welcome</dd>
