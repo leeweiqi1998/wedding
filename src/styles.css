@@ -1,7 +1,7 @@
 :root{
   --bg:#fafaf7;
   --ink:#064e3b;          /* emerald-900 */
-  --muted:#7a756e;
+  --muted:#064e3b;        /* same emerald — all text one color */
   --rule:#e5e1d8;
   --rule-strong:#c8c2b4;
 }
