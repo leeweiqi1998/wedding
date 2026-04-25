@@ -4,7 +4,6 @@ const items = [
   { title: 'Adults only', body: 'With love, this is an adults-only evening.' },
   { title: 'Dietary notes', body: 'Allergies or dietary needs? Let us know in the RSVP form.' },
   { title: 'Getting there', body: 'Clifford Pier is at The Fullerton Bay Hotel, 80 Collyer Quay. Valet parking is available; Raffles Place MRT is a short walk.' },
-  { title: 'Gifts', body: 'Your presence is the only present we need.' },
 ];
 
 export default function Faq() {
