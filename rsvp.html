@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RSVP &middot; Sean &amp; Wei Qi</title>
+<meta name="description" content="RSVP for the wedding dinner of Sean &amp; Wei Qi, 7 November 2026." />
+<meta name="theme-color" content="#fafaf7" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-mark">S &middot; W</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="details.html">Details</a>
+      <a href="rsvp.html">RSVP</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>RSVP</h1>
+  <div class="sub">Kindly respond by 1 October 2026</div>
+</header>
+
+<section class="block rsvp">
+  <div class="wrap">
+    <form class="rsvp-form" id="rsvp-form" novalidate>
+      <p class="hp">
+        <label>Don't fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <div class="field">
+        <label class="lbl" for="name">Your name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="email">Email <span class="opt">(so we can reach you)</span></label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+      </div>
+
+      <div class="field">
+        <fieldset>
+          <legend>Will you join us?</legend>
+          <div class="radios">
+            <label>
+              <input type="radio" name="attending" value="Joyfully accepts" required />
+              <span>Joyfully accepts</span>
+            </label>
+            <label>
+              <input type="radio" name="attending" value="Regretfully declines" />
+              <span>Regretfully declines</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="field">
+        <fieldset>
+          <legend>Will anyone be joining you?</legend>
+          <div class="radios" id="plusone-radios">
+            <label>
+              <input type="radio" name="plus_one" value="Bringing a guest" />
+              <span>I&rsquo;ll bring a guest</span>
+            </label>
+            <label>
+              <input type="radio" name="plus_one" value="Coming solo" />
+              <span>Just me</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="field plus-one-name" id="plus-one-name">
+        <label class="lbl" for="plus_one_name">Plus one&rsquo;s full name</label>
+        <input type="text" id="plus_one_name" name="plus_one_name" />
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="dietary">Dietary restrictions or allergies <span class="opt">(optional)</span></label>
+        <textarea id="dietary" name="dietary" rows="3" placeholder="e.g. vegetarian, no shellfish, nut allergy"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="note">Leave us a quirky or intentional note</label>
+        <textarea id="note" name="note" rows="3" required placeholder="Be silly, be sweet, be specific &mdash; just don&rsquo;t leave us hanging."></textarea>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="submit" id="submit-btn">Send RSVP</button>
+      </div>
+    </form>
+
+    <div class="form-status" id="thanks">
+      <h3>Thank you</h3>
+      <p>Your RSVP has been received. We can&rsquo;t wait to celebrate with you.</p>
+    </div>
+
+    <div class="form-status error" id="oops">
+      <h3>Something went wrong</h3>
+      <p>Please try again, or email us directly.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="mark">S &middot; W</div>
+  7 . 11 . 2026 &nbsp;&middot;&nbsp; Singapore
+</footer>
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/rsvp.js"></script>
+</body>
+</html>
